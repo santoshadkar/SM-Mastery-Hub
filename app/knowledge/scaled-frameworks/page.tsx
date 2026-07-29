@@ -130,6 +130,46 @@ export default function ScaledFrameworksPage() {
         and alignment across many products favors SAFe; an organization that already runs Scrum
         well and wants to network multiple teams without heavy new roles fits Scrum@Scale.
       </Callout>
+
+      <h2>How the Scrum Master's own role changes in each framework</h2>
+      <p>
+        A Scrum Master moving into a scaled context often finds the role itself shifts, not just
+        the surrounding structure:
+      </p>
+      <ul>
+        <li>
+          <strong>In SAFe</strong>, a Scrum Master typically still serves one team, but a new role
+          — the Release Train Engineer (RTE) — sits above the team level, facilitating the Agile
+          Release Train and PI Planning. A Scrum Master with RTE ambitions is effectively looking
+          at a promotion path within SAFe specifically.
+        </li>
+        <li>
+          <strong>In LeSS</strong>, there's deliberately no separate scaling role — a small number
+          of Scrum Masters serve multiple teams directly, since LeSS's whole philosophy is adding
+          as little new structure as possible.
+        </li>
+        <li>
+          <strong>In Nexus</strong>, a Scrum Master might also serve on the Nexus Integration Team
+          alongside their normal team accountability, adding a cross-team integration focus on top
+          of their existing role.
+        </li>
+        <li>
+          <strong>In Scrum@Scale</strong>, Scrum Masters collectively participate in the Scrum of
+          Scrums, and one may take on the Executive Action Team role — effectively a Scrum Master
+          for the organization's impediments, not just one team's.
+        </li>
+      </ul>
+
+      <h2>Adoption difficulty, honestly</h2>
+      <p>
+        SAFe is the fastest to stand up on paper — it comes with detailed, prescriptive guidance —
+        but that same prescriptiveness makes it the hardest to adapt once adopted, and the easiest
+        to implement as ceremony without substance. LeSS is the opposite: minimal structure means
+        there's less to misconfigure, but it demands more organizational discipline and genuine
+        buy-in to work, since there's no detailed playbook to fall back on. Nexus and Scrum@Scale
+        sit in between, and both assume the underlying single-team Scrum is already healthy — none
+        of these frameworks fix a broken single-team practice by adding structure on top of it.
+      </p>
     </ArticleLayout>
   );
 }

@@ -109,12 +109,57 @@ export default function KanbanScrumbanPage() {
         to tracking cycle time and a cumulative flow diagram.
       </p>
 
+      <h2>Little's Law: the math behind why WIP limits work</h2>
+      <p>
+        Little's Law, borrowed from queueing theory, states a simple relationship: average cycle
+        time equals average work in progress divided by average throughput. In plain terms — if a
+        team has 12 items in progress and completes 4 per week, items are taking roughly 3 weeks
+        to finish. Cut WIP to 6 without changing throughput, and cycle time roughly halves to 1.5
+        weeks. This is the mathematical reason WIP limits reduce cycle time: less work in flight at
+        once means each item spends less time waiting behind other items.
+      </p>
+
+      <h2>Classes of service</h2>
+      <p>
+        Not all work carries the same urgency, and treating it all identically on the board hides
+        that. A common pattern is defining a small number of classes of service, each with its own
+        handling policy:
+      </p>
+      <ul>
+        <li>
+          <strong>Expedite</strong> — genuinely urgent items (a production outage) that jump the
+          queue, usually capped at one at a time so &quot;expedite&quot; doesn&apos;t quietly become
+          everything.
+        </li>
+        <li>
+          <strong>Fixed date</strong> — items with a real external deadline (a compliance
+          requirement, a contractual commitment), prioritized as the date approaches.
+        </li>
+        <li>
+          <strong>Standard</strong> — most work, handled in priority order with no special
+          treatment.
+        </li>
+        <li>
+          <strong>Intangible</strong> — work with no urgent deadline but real long-term cost if
+          neglected indefinitely (tech debt, minor polish), which needs a deliberate policy or it
+          never gets picked up at all.
+        </li>
+      </ul>
+      <p>
+        Without explicit classes of service, teams tend to informally treat almost everything as
+        urgent, which defeats the purpose of prioritization entirely.
+      </p>
+
       <Callout title="Related pages">
         See <a href="/tools/jira" className="text-brand-600 underline">Jira</a> and{" "}
         <a href="/tools/azure-devops" className="text-brand-600 underline">Azure DevOps</a> for how
-        to configure boards and WIP limits, and{" "}
+        to configure boards and WIP limits, the{" "}
         <a href="/knowledge/scrum-framework" className="text-brand-600 underline">The Scrum Framework</a>{" "}
-        for the events Scrumban borrows from.
+        for the events Scrumban borrows from, and{" "}
+        <a href="/resources/reading/kanban-successful-evolutionary-change" className="text-brand-600 underline">
+          the Kanban book deep-dive
+        </a>{" "}
+        for the evolutionary-change philosophy behind these practices.
       </Callout>
     </ArticleLayout>
   );

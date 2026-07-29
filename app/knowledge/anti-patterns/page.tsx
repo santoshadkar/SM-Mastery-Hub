@@ -71,6 +71,41 @@ const antiPatterns = [
     fix:
       "Make the allocation visible (a simple matrix of person x team x percentage) and take it to whoever controls resourcing as a concrete impediment, with the cost in missed Sprint Goals attached. This is often an organizational impediment, not a team-level one — escalate it as such.",
   },
+  {
+    name: '"Scrum-but"',
+    symptom:
+      "The team describes their process as 'we do Scrum, but we skip retros' or 'we do Scrum, but the Product Owner sets fixed deadlines' — a growing list of exceptions that, added up, remove most of what makes Scrum's empiricism actually work.",
+    fix:
+      "Ask, for each 'but,' what specific problem it was meant to solve — sometimes there's a legitimate reason, and sometimes it's just an unexamined habit. Distinguish adaptations made deliberately to fit a real constraint from ones that quietly crept in because nobody pushed back.",
+  },
+  {
+    name: "Sprint Zero that never ends",
+    symptom:
+      "A team declares an initial 'Sprint Zero' for setup, research, and environment configuration — with no actual increment delivered — and it stretches for months without anyone treating that as unusual.",
+    fix:
+      "Timebox setup work explicitly and treat it like any other Sprint with a real, if modest, goal — even 'a deployable skeleton with one working endpoint' is a genuine increment. An open-ended runway before real delivery starts is exactly the kind of upfront-planning trap Scrum exists to avoid.",
+  },
+  {
+    name: "Planning Poker theater",
+    symptom:
+      "The team plays through estimation rounds, but converges on whatever number the most senior or loudest voice suggested, regardless of what others' cards actually showed — the ritual runs, but the independent judgment it's meant to surface doesn't.",
+    fix:
+      "Make outlier estimates the actual point of discussion, not an inconvenience to smooth over quickly — ask the highest and lowest estimator to explain their reasoning before re-voting. If the same person's number always wins, the format has stopped doing its job.",
+  },
+  {
+    name: "Definition of Ready used as a gatekeeping weapon",
+    symptom:
+      "A Definition of Ready meant to protect Sprint Planning from ambiguous work instead becomes a way for developers to reject almost any item as 'not ready,' stalling the backlog indefinitely.",
+    fix:
+      "Revisit the Definition of Ready together and check whether it's set at a genuinely necessary bar or has quietly become a stalling tactic. A Definition of Ready should reduce risk, not become a new source of friction between the Product Owner and the team.",
+  },
+  {
+    name: "Copy-pasted retrospective format, sprint after sprint",
+    symptom:
+      "The same retro format runs unchanged for a year or more, attendance and engagement quietly decline, and the retro increasingly produces the same shallow observations each time.",
+    fix:
+      "Rotate formats deliberately based on the team's actual recent state, not habit — see the facilitation guides in the Resources library for a rotation of options matched to different situations.",
+  },
 ];
 
 export default function AntiPatternsPage() {

@@ -126,12 +126,52 @@ export default function ScrumFrameworkPage() {
         barriers between stakeholders and the team.
       </p>
 
+      <h2>What Scrum deliberately doesn't prescribe</h2>
+      <p>
+        Scrum is a minimal framework by design — it defines just enough structure to enable
+        empiricism, and leaves the rest to the team. It doesn&apos;t prescribe estimation techniques
+        (story points are a common convention, not a Scrum requirement), specific engineering
+        practices (test-driven development, pair programming), how refinement should be run, or
+        exactly how a team organizes its own work within a Sprint. Teams frequently borrow
+        practices from Extreme Programming or Kanban to fill these gaps — that&apos;s expected, not a
+        deviation from &quot;pure&quot; Scrum.
+      </p>
+
+      <h2>Common misconceptions, beyond the Scrum Master's role</h2>
+      <ul>
+        <li>
+          <strong>&quot;Story points measure time.&quot;</strong> They measure relative effort and
+          uncertainty, deliberately decoupled from hours. Treating them as a time unit undoes the
+          reason they exist.
+        </li>
+        <li>
+          <strong>&quot;A Sprint is a mini-waterfall.&quot;</strong> If analysis, building, and testing
+          happen in separate phases within the Sprint rather than continuously for each backlog
+          item, the Sprint's iterative benefit is mostly lost — see the &quot;mini-waterfall sprints&quot;
+          anti-pattern.
+        </li>
+        <li>
+          <strong>&quot;Velocity is a productivity score.&quot;</strong> It's a forecasting input specific
+          to one team's own estimating scale, not a comparable measure of how hard a team is
+          working.
+        </li>
+        <li>
+          <strong>&quot;The Product Owner can add anything to the Sprint at any time.&quot;</strong> Scope
+          can be clarified and renegotiated, but the Sprint Goal itself is protected — that's a
+          Sprint-level commitment, not something re-opened on a whim mid-Sprint.
+        </li>
+      </ul>
+
       <Callout title="Related pages">
         See <a href="/knowledge/anti-patterns" className="text-brand-600 underline">Anti-Patterns &amp; Fixes</a>{" "}
-        for the most common ways these roles and events break down, and the{" "}
+        for the most common ways these roles and events break down, the{" "}
         <a href="/tools/jira" className="text-brand-600 underline">Jira</a> /{" "}
         <a href="/tools/azure-devops" className="text-brand-600 underline">Azure DevOps</a> guides
-        for how to configure boards around these artifacts.
+        for how to configure boards around these artifacts, and{" "}
+        <a href="/knowledge/interview-preparation/scrum-agile-fundamentals" className="text-brand-600 underline">
+          Interview Preparation
+        </a>{" "}
+        to test how well you can explain these concepts out loud.
       </Callout>
     </ArticleLayout>
   );

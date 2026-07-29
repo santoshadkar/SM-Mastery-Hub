@@ -35,6 +35,18 @@ export const knowledgeEntries: KnowledgeEntry[] = [
     description:
       "The most common ways Scrum and Agile go wrong in real teams, and concrete steps a Scrum Master can take to address each one.",
   },
+  {
+    slug: "real-world-scenarios",
+    title: "Real-World Scenarios",
+    description:
+      "15 real organizational situations — a reorg, a resignation, a mandated framework switch — and a concrete approach to each.",
+  },
+  {
+    slug: "interview-preparation",
+    title: "Interview Preparation",
+    description:
+      "100+ mock interview questions with real answers, organized by topic, so you can drill your weakest areas before the real thing.",
+  },
 ];
 
 export function getKnowledgeEntry(slug: string): KnowledgeEntry | undefined {

@@ -82,6 +82,44 @@ export default function AgileManifestoPage() {
         <li>At regular intervals, the team reflects on how to become more effective, then tunes and adjusts its behavior accordingly.</li>
       </ul>
 
+      <h2>Common misinterpretations worth correcting</h2>
+      <ul>
+        <li>
+          <strong>&quot;Agile means no documentation.&quot;</strong> The value is &quot;working software over
+          comprehensive documentation,&quot; not &quot;no documentation.&quot; Documentation that genuinely
+          supports the product (an architecture decision record, an onboarding guide) is fine —
+          the principle is against documentation produced for its own sake, or as a substitute for
+          a working product.
+        </li>
+        <li>
+          <strong>&quot;Agile means no planning.&quot;</strong> Sprint Planning, refinement, and a
+          Product Goal are all planning activities — Agile doesn&apos;t reject planning, it rejects
+          planning so far in advance and in such detail that the plan can&apos;t adapt to what&apos;s
+          actually learned along the way.
+        </li>
+        <li>
+          <strong>&quot;Agile means no estimates or commitments.&quot;</strong> Teams still forecast,
+          still commit to a Sprint Goal, and still get held to reasonable expectations. What
+          changes is the time horizon and the willingness to revise the plan as new information
+          arrives, not the existence of commitment altogether.
+        </li>
+        <li>
+          <strong>&quot;Agile means fast.&quot;</strong> Speed is a side effect of shorter feedback
+          loops catching problems early, not the goal itself. A team that ships fast but never
+          inspects or adapts based on what it ships isn&apos;t Agile — it&apos;s just fast.
+        </li>
+      </ul>
+
+      <h2>Where the manifesto came from</h2>
+      <p>
+        The seventeen signatories weren&apos;t a single company or committee — they were practitioners
+        associated with several different lightweight methods already in use at the time (including
+        Scrum and Extreme Programming), who found enough common ground in their approaches to write
+        a shared statement of values. That's worth knowing because it explains why the manifesto
+        itself is framework-agnostic — Scrum, Kanban, and other approaches are all downstream
+        implementations of these values, not the source of them.
+      </p>
+
       <h2>What this means in practice</h2>
       <p>
         For a Scrum Master, the values and principles aren&apos;t a poster on the wall — they&apos;re a
