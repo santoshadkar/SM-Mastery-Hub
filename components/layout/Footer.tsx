@@ -16,6 +16,9 @@ export function Footer() {
           <Link href="/tools" className="hover:text-brand-700">
             Tools Hub
           </Link>
+          <Link href="/workshops" className="hover:text-brand-700">
+            Workshops
+          </Link>
           <Link href="/assessment" className="hover:text-brand-700">
             Self-Assessment
           </Link>
