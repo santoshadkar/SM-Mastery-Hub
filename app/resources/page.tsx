@@ -3,7 +3,8 @@ import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { Card, LinkCard } from "@/components/ui/Card";
 import { IconBookOpen, IconLayers, IconClipboardCheck, IconUsers, IconLightbulb, IconCompass } from "@/components/icons/Icons";
-import { articleEntries } from "@/lib/content/articles";
+import { allArticles } from "@/lib/content/articles";
+import { bookNotes } from "@/lib/content/books";
 
 export const metadata: Metadata = {
   title: "Free Resources Library",
@@ -56,13 +57,13 @@ export default function ResourcesPage() {
           <LinkCard
             href="/resources/articles"
             title="Articles"
-            description={`${articleEntries.length} opinionated, scripted deep-dives on real situations — what to actually say, not just what to think about.`}
+            description={`${allArticles.length} opinionated, scripted deep-dives across the 7 dimensions of the role — what to actually say, not just what to think about.`}
             icon={<IconLightbulb />}
           />
           <LinkCard
             href="/resources/reading"
             title="The Real Ideas Behind the Books We Recommend"
-            description="Full breakdowns of the actual frameworks from four well-known Agile books — not blurbs. Retrospectives, coaching stances, Sutherland's core thesis, and Team Topologies."
+            description={`${bookNotes.length} full breakdowns of the actual frameworks from well-known Agile and leadership books — not blurbs.`}
             icon={<IconBookOpen />}
           />
         </div>

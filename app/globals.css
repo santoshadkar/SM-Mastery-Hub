@@ -82,3 +82,41 @@ body {
   color: #0f172a;
   font-weight: 600;
 }
+
+.prose-content a {
+  color: var(--color-brand-600);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.prose-content blockquote {
+  margin: 1.5rem 0;
+  border-radius: 0.75rem;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  padding: 0.25rem 1.25rem;
+}
+
+.prose-content blockquote p {
+  margin: 0.9rem 0;
+  font-size: 0.925rem;
+  line-height: 1.6;
+  color: #1e293b;
+}
+
+.prose-content blockquote p:first-child {
+  margin-top: 0.9rem;
+}
+
+.prose-content blockquote p:last-child {
+  margin-bottom: 0.9rem;
+}
+
+.prose-content blockquote strong {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #4f46e5;
+  display: block;
+  margin-bottom: 0.15rem;
+}
