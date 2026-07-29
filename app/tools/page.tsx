@@ -3,10 +3,18 @@ import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { LinkCard } from "@/components/ui/Card";
 import { toolEntries } from "@/lib/content/tools";
+import { IconBoard, IconBookOpen, IconChartBar, IconSparkles } from "@/components/icons/Icons";
 
 export const metadata: Metadata = {
   title: "Tools Hub",
   description: "Practical guidance for Scrum Masters using Jira, Confluence, Azure DevOps, and AI.",
+};
+
+const icons: Record<string, React.ReactNode> = {
+  jira: <IconBoard />,
+  confluence: <IconBookOpen />,
+  "azure-devops": <IconChartBar />,
+  "ai-for-scrum-masters": <IconSparkles />,
 };
 
 export default function ToolsHubPage() {
@@ -25,6 +33,7 @@ export default function ToolsHubPage() {
               href={`/tools/${entry.slug}`}
               title={entry.title}
               description={entry.description}
+              icon={icons[entry.slug]}
             />
           ))}
         </div>

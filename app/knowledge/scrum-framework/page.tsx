@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ArticleLayout } from "@/components/content/ArticleLayout";
 import { Callout } from "@/components/ui/Card";
+import { SprintCycleDiagram } from "@/components/graphics/SprintCycleDiagram";
 
 export const metadata: Metadata = {
   title: "The Scrum Framework",
@@ -65,6 +66,9 @@ export default function ScrumFrameworkPage() {
       </ul>
 
       <h2>The five events</h2>
+      <div className="not-prose my-6">
+        <SprintCycleDiagram />
+      </div>
       <ul>
         <li>
           <strong>The Sprint</strong> — a fixed-length container (typically one to four weeks)

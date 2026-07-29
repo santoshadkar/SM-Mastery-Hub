@@ -12,16 +12,23 @@ export function LinkCard({
   href,
   title,
   description,
+  icon,
 }: {
   href: string;
   title: string;
   description: string;
+  icon?: React.ReactNode;
 }) {
   return (
     <Link
       href={href}
       className="group block rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-brand-300 hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600"
     >
+      {icon ? (
+        <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-lg bg-brand-50 text-brand-600 transition group-hover:bg-brand-100">
+          {icon}
+        </div>
+      ) : null}
       <h3 className="text-lg font-semibold text-slate-900 group-hover:text-brand-700">
         {title}
       </h3>

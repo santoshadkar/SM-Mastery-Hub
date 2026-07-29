@@ -9,7 +9,9 @@ import {
   getMaturityLevel,
   type Answers,
 } from "@/lib/assessment/scoring";
+import { recommendations, getBand } from "@/lib/assessment/recommendations";
 import { DimensionBarChart } from "./DimensionBarChart";
+import { RadarChart } from "./RadarChart";
 
 type Phase = "intro" | number | "results";
 
@@ -37,6 +39,11 @@ export function AssessmentApp() {
       .slice(0, 3)
       .filter((d) => d.percentage < 80);
   }, [dimensionScores]);
+
+  const strongDimensions = useMemo(() => {
+    const weakIds = new Set(weakestDimensions.map((d) => d.dimensionId));
+    return dimensionScores.filter((d) => getBand(d.percentage) === "high" && !weakIds.has(d.dimensionId));
+  }, [dimensionScores, weakestDimensions]);
 
   function setAnswer(questionId: string, value: number) {
     setAnswers((prev) => ({ ...prev, [questionId]: value }));
@@ -126,8 +133,16 @@ export function AssessmentApp() {
         <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
           <h3 className="text-lg font-bold text-slate-900">Scores by dimension</h3>
           <div className="mt-6">
-            <DimensionBarChart scores={dimensionScores} />
+            <RadarChart scores={dimensionScores} />
           </div>
+          <details className="mt-6 group">
+            <summary className="cursor-pointer text-sm font-medium text-brand-600 hover:text-brand-700">
+              Show exact scores
+            </summary>
+            <div className="mt-4">
+              <DimensionBarChart scores={dimensionScores} />
+            </div>
+          </details>
         </div>
 
         {weakestDimensions.length > 0 ? (
@@ -135,11 +150,13 @@ export function AssessmentApp() {
             <h3 className="text-lg font-bold text-slate-900">Where to focus next</h3>
             <p className="mt-2 text-sm text-slate-600">
               Based on your lowest-scoring dimensions, here's where growth would move the needle
-              most:
+              most — a few concrete things you can actually do, not just what to read.
             </p>
             <div className="mt-6 space-y-5">
               {weakestDimensions.map((score) => {
                 const dim = dimensions.find((d) => d.id === score.dimensionId)!;
+                const band = getBand(score.percentage);
+                const actions = recommendations[dim.id][band];
                 return (
                   <div key={dim.id} className="rounded-xl border border-slate-200 p-5">
                     <div className="flex items-baseline justify-between">
@@ -147,7 +164,15 @@ export function AssessmentApp() {
                       <span className="text-sm text-slate-500">{score.percentage}%</span>
                     </div>
                     <p className="mt-2 text-sm text-slate-600">{dim.description}</p>
-                    <div className="mt-3 flex flex-wrap gap-3">
+                    <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-slate-400">
+                      What you can do next
+                    </p>
+                    <ul className="mt-2 list-disc space-y-1.5 pl-5 text-sm text-slate-700">
+                      {actions.map((action) => (
+                        <li key={action}>{action}</li>
+                      ))}
+                    </ul>
+                    <div className="mt-4 flex flex-wrap gap-3">
                       {dim.recommendationLinks.map((link) => (
                         <Link
                           key={link.href}
@@ -158,6 +183,30 @@ export function AssessmentApp() {
                         </Link>
                       ))}
                     </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        ) : null}
+
+        {strongDimensions.length > 0 ? (
+          <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
+            <h3 className="text-lg font-bold text-slate-900">Your strengths</h3>
+            <p className="mt-2 text-sm text-slate-600">
+              Solid ground to build from — and a stretch idea for each, so strength doesn&apos;t
+              turn into a plateau.
+            </p>
+            <div className="mt-6 space-y-4">
+              {strongDimensions.map((score) => {
+                const dim = dimensions.find((d) => d.id === score.dimensionId)!;
+                return (
+                  <div key={dim.id} className="rounded-xl border border-emerald-200 bg-emerald-50/50 p-5">
+                    <div className="flex items-baseline justify-between">
+                      <h4 className="font-semibold text-slate-900">{dim.name}</h4>
+                      <span className="text-sm text-emerald-700">{score.percentage}%</span>
+                    </div>
+                    <p className="mt-2 text-sm text-slate-700">{recommendations[dim.id].high[0]}</p>
                   </div>
                 );
               })}
