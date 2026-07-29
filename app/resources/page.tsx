@@ -10,45 +10,6 @@ export const metadata: Metadata = {
   description: "Ready-to-use templates, articles, recommended reading, and links to trusted external resources.",
 };
 
-const recommendedReading = [
-  {
-    title: "Scrum: The Art of Doing Twice the Work in Half the Time",
-    author: "Jeff Sutherland",
-    idea:
-      "Written by one of Scrum's co-creators, this traces Scrum's origins and argues its core mechanics — short cycles, a single prioritized backlog, and relentless inspection — come from observing how teams actually get better, not from theory.",
-  },
-  {
-    title: "Coaching Agile Teams",
-    author: "Lyssa Adkins",
-    idea:
-      "A foundational text on the coaching side of the Scrum Master role, distinguishing coaching from teaching, mentoring, and facilitating, and making the case that a Scrum Master's job is to become progressively less necessary.",
-  },
-  {
-    title: "Agile Retrospectives: Making Good Teams Great",
-    author: "Esther Derby & Diana Larsen",
-    idea:
-      "The book most retro formats on this site (and elsewhere) ultimately trace back to — a structured approach to running retrospectives in phases (set the stage, gather data, generate insights, decide what to do, close) rather than jumping straight to a fix.",
-  },
-  {
-    title: "The Scrum Field Guide",
-    author: "Mitch Lacey",
-    idea:
-      "A practitioner-focused, scenario-based book that walks through common real-world Scrum problems (a Product Owner who won't prioritize, a team that pads estimates) with concrete responses, rather than restating the framework itself.",
-  },
-  {
-    title: "Team Topologies",
-    author: "Matthew Skelton & Manuel Pais",
-    idea:
-      "Directly relevant to the Scaling dimension of the self-assessment — argues that team structure and communication pathways should be designed deliberately around how work actually flows, rather than left to emerge by accident.",
-  },
-  {
-    title: "Kanban: Successful Evolutionary Change for Your Technology Business",
-    author: "David J. Anderson",
-    idea:
-      "The book that formalized Kanban for knowledge work, making the case for evolutionary, low-friction change (start with what you do now) instead of a disruptive framework switch.",
-  },
-];
-
 const externalResources = [
   {
     name: "Scrum.org",
@@ -91,12 +52,20 @@ export default function ResourcesPage() {
         description="Copy what's useful directly from this page, read an article on a specific situation, or follow the links below to well-established free resources maintained by the wider Agile community."
       />
       <Container className="py-10">
-        <LinkCard
-          href="/resources/articles"
-          title="Articles"
-          description={`${articleEntries.length} original, practical write-ups on specific situations Scrum Masters run into — from your first 30 days to managing up.`}
-          icon={<IconLightbulb />}
-        />
+        <div className="grid gap-6 sm:grid-cols-2">
+          <LinkCard
+            href="/resources/articles"
+            title="Articles"
+            description={`${articleEntries.length} opinionated, scripted deep-dives on real situations — what to actually say, not just what to think about.`}
+            icon={<IconLightbulb />}
+          />
+          <LinkCard
+            href="/resources/reading"
+            title="The Real Ideas Behind the Books We Recommend"
+            description="Full breakdowns of the actual frameworks from four well-known Agile books — not blurbs. Retrospectives, coaching stances, Sutherland's core thesis, and Team Topologies."
+            icon={<IconBookOpen />}
+          />
+        </div>
       </Container>
       <Container className="space-y-14 pb-16">
         <section>
@@ -239,28 +208,6 @@ export default function ResourcesPage() {
                 unknowns we haven&apos;t resolved yet.&quot;
               </p>
             </Card>
-          </div>
-        </section>
-
-        <section>
-          <div className="flex items-center gap-3">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-50 text-brand-600">
-              <IconBookOpen className="h-5 w-5" />
-            </div>
-            <h2 className="text-2xl font-bold text-slate-900">Recommended reading</h2>
-          </div>
-          <p className="mt-2 max-w-2xl text-slate-600">
-            Well-known, real books in the field. These are original one-paragraph summaries of each
-            book&apos;s core idea, written for this site — not excerpts from the books themselves.
-          </p>
-          <div className="mt-6 grid gap-6 sm:grid-cols-2">
-            {recommendedReading.map((book) => (
-              <Card key={book.title}>
-                <h3 className="font-semibold text-slate-900">{book.title}</h3>
-                <p className="mt-0.5 text-sm text-slate-500">{book.author}</p>
-                <p className="mt-2 text-sm text-slate-600">{book.idea}</p>
-              </Card>
-            ))}
           </div>
         </section>
 

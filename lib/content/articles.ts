@@ -10,36 +10,22 @@ export const articleEntries: ArticleEntry[] = [
     slug: "first-30-days",
     title: "Your First 30 Days as a New Scrum Master",
     description:
-      "What to actually prioritize in your first month on a new team, week by week — before you try to fix anything.",
-    readTime: "6 min read",
+      "The instinct to fix things fast is a trap. What to actually do week by week — with the exact wrong answer new Scrum Masters give, and what to say instead.",
+    readTime: "9 min read",
   },
   {
     slug: "retro-that-leads-to-change",
     title: "Running a Retrospective That Actually Leads to Change",
     description:
-      "Why most retros generate the same list every time, and the specific facilitation choices that break the cycle.",
-    readTime: "5 min read",
-  },
-  {
-    slug: "estimating-without-story-points",
-    title: "Estimating Without Story Points: Alternatives and Trade-offs",
-    description:
-      "Story points aren't mandatory. A practical look at #NoEstimates, flow-based forecasting, and when each approach fits.",
-    readTime: "6 min read",
+      "Why your retros generate the same list every time — with the real confrontation script for when an issue shows up for the third time in a row.",
+    readTime: "8 min read",
   },
   {
     slug: "managing-up",
     title: "Managing Up: Communicating Sprint Reality to Skeptical Stakeholders",
     description:
-      "How to deliver an honest status update to a stakeholder who only wants to hear that everything is on track.",
-    readTime: "5 min read",
-  },
-  {
-    slug: "scrum-master-to-agile-coach",
-    title: "From Scrum Master to Agile Coach: What Actually Changes",
-    description:
-      "The real differences in scope, skills, and daily work between the two roles — and how to tell if you're ready.",
-    readTime: "6 min read",
+      "\"We'll try our best\" is a trap that costs you Friday. The exact words to use instead when a stakeholder wants only good news.",
+    readTime: "8 min read",
   },
 ];
 
