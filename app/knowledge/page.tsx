@@ -3,12 +3,12 @@ import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { LinkCard } from "@/components/ui/Card";
 import { knowledgeEntries } from "@/lib/content/knowledge";
-import { IconCompass, IconClipboardCheck, IconBoard, IconLayers, IconLightbulb, IconTarget, IconSparkles } from "@/components/icons/Icons";
+import { IconCompass, IconClipboardCheck, IconBoard, IconLayers, IconLightbulb, IconTarget, IconSparkles, IconChartBar } from "@/components/icons/Icons";
 
 export const metadata: Metadata = {
   title: "Knowledge Hub",
   description:
-    "Structured, accurate reference content on Agile values, Scrum, Kanban/Scrumban, scaled frameworks, anti-patterns, real-world scenarios, and interview prep.",
+    "Structured, accurate reference content on Agile values, Scrum, Kanban/Scrumban, scaled frameworks, anti-patterns, framework transitions, real-world scenarios, and interview prep.",
 };
 
 const icons: Record<string, React.ReactNode> = {
@@ -17,6 +17,8 @@ const icons: Record<string, React.ReactNode> = {
   "kanban-scrumban": <IconBoard />,
   "scaled-frameworks": <IconLayers />,
   "anti-patterns": <IconLightbulb />,
+  "waterfall-to-scrum-transition": <IconChartBar />,
+  "scrum-to-kanban-transition": <IconBoard />,
   "real-world-scenarios": <IconTarget />,
   "interview-preparation": <IconSparkles />,
 };

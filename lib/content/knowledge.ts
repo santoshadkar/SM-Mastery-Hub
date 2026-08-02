@@ -36,6 +36,18 @@ export const knowledgeEntries: KnowledgeEntry[] = [
       "The most common ways Scrum and Agile go wrong in real teams, and concrete steps a Scrum Master can take to address each one.",
   },
   {
+    slug: "waterfall-to-scrum-transition",
+    title: "Transitioning from Waterfall to Scrum",
+    description:
+      "A phase-by-phase guide for a team — and the Scrum Master leading it — moving from Waterfall to Scrum, including the challenges specific to that move.",
+  },
+  {
+    slug: "scrum-to-kanban-transition",
+    title: "Transitioning from Scrum to Kanban/Scrumban",
+    description:
+      "A phase-by-phase guide for a team moving from Sprint-based Scrum to flow-based Kanban or a Scrumban hybrid.",
+  },
+  {
     slug: "real-world-scenarios",
     title: "Real-World Scenarios",
     description:
