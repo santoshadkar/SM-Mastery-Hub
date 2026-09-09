@@ -96,6 +96,13 @@ const pillars = [
     icon: <IconTarget />,
   },
   {
+    href: "/psm-assessments",
+    title: "PSM I, II & III Practice Assessments",
+    description:
+      "Real-time practice exam simulations for PSM 1, PSM 2, and PSM 3 certification prep with instant scoring & score-based action plans.",
+    icon: <IconSparkles />,
+  },
+  {
     href: "/resources",
     title: "Free Resources Library",
     description:

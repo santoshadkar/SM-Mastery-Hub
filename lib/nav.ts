@@ -9,6 +9,7 @@ export const navItems: NavItem[] = [
   { href: "/tools", label: "Tools Hub" },
   { href: "/workshops", label: "Workshops" },
   { href: "/assessment", label: "Self-Assessment" },
+  { href: "/psm-assessments", label: "PSM Assessments" },
   { href: "/resources", label: "Resources" },
   { href: "/chat", label: "Chat" },
 ];
