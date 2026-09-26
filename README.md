@@ -69,6 +69,27 @@ npm run build
 npm run start
 ```
 
+## Workshop presentation decks
+
+Every workshop under `/workshops` has a slide deck (title, objectives, ice breakers, detailed
+concepts, live examples, real-life use, pitfalls, a hands-on activity, takeaways, and sources).
+
+- **Source of truth:** slide data lives in `lib/content/workshops/decks/*.ts` (one file per workshop
+  category). Add or edit slides there.
+- **Web viewer:** `/workshops/<category>/<slug>/deck` renders the same data as a keyboard-navigable
+  slide viewer with full-screen mode, speaker notes and a plain-text outline.
+- **PowerPoint files:** generated from the same data into `public/decks/*.pptx` and committed, so
+  deployment does not need the generator. After changing any slide, regenerate:
+
+```bash
+npm run decks              # lint every deck (structure + text-fit) and write the .pptx files
+STRICT=1 npm run decks     # additionally fail if any workshop is missing a deck
+```
+
+The generator refuses to write a deck whose text would overflow its slide, and requires each deck
+to contain an ice breaker, at least three concept slides, a live example, real-life usage, an
+activity and a sources slide (last).
+
 ## Deployment (Vercel)
 
 1. Push this repository to GitHub.

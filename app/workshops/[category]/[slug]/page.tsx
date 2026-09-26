@@ -5,6 +5,7 @@ import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { Callout } from "@/components/ui/Card";
 import { allWorkshops, getWorkshop, getWorkshopCategory, getWorkshopsByCategory } from "@/lib/content/workshops";
+import { deckPptxPath, getDeck } from "@/lib/content/workshops/decks";
 
 type PageParams = Promise<{ category: string; slug: string }>;
 
@@ -26,6 +27,7 @@ export default async function WorkshopPage({ params }: { params: PageParams }) {
 
   const cat = getWorkshopCategory(category)!;
   const related = getWorkshopsByCategory(category).filter((w) => w.slug !== slug).slice(0, 3);
+  const deck = getDeck(slug);
 
   return (
     <>
@@ -40,6 +42,31 @@ export default async function WorkshopPage({ params }: { params: PageParams }) {
               Audience: {workshop.audience}
             </span>
           </div>
+
+          {deck ? (
+            <div className="mt-6 rounded-xl border border-brand-200 bg-brand-50 p-5">
+              <p className="font-semibold text-slate-900">Presentation deck included — {deck.slides.length} slides</p>
+              <p className="mt-1 text-sm leading-6 text-slate-700">
+                Detailed concepts, live examples, real-life use, two ice-breaker options, a hands-on activity and further
+                reading. Present it from this page or download the editable PowerPoint.
+              </p>
+              <div className="mt-3 flex flex-wrap gap-3">
+                <Link
+                  href={`/workshops/${category}/${slug}/deck`}
+                  className="rounded-lg bg-brand-600 px-4 py-2 text-sm font-semibold text-white hover:bg-brand-700"
+                >
+                  View the presentation
+                </Link>
+                <a
+                  href={deckPptxPath(slug)}
+                  download
+                  className="rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-800 hover:bg-slate-50"
+                >
+                  Download .pptx
+                </a>
+              </div>
+            </div>
+          ) : null}
 
           <div className="prose-content mt-6">
             <h2>Why it matters</h2>

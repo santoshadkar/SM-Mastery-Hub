@@ -23,15 +23,16 @@ export default function WorkshopsIndexPage() {
       <PageHeader
         eyebrow="Workshops"
         title="Workshop Facilitation Guides"
-        description={`${allWorkshops.length} ready-to-run workshops a Scrum Master is often asked to facilitate — each with an objective, materials list, timed agenda, and facilitator tips, not just a topic summary.`}
+        description={`${allWorkshops.length} ready-to-run workshops a Scrum Master is often asked to facilitate — each with a timed agenda, facilitator tips and a full presentation deck (concepts, live examples, ice breakers, sources).`}
       />
       <Container className="py-10">
         <div className="mx-auto mb-10 max-w-3xl">
           <Callout title="How to use these">
             Each guide is a real, timed run-of-show you can adapt to your team&apos;s context —
             print the agenda, adjust the timings to fit your slot, and swap in your own team&apos;s
-            examples wherever the guide suggests using &quot;a real recent example.&quot; These aren&apos;t
-            slide decks; they&apos;re facilitation plans.
+            examples wherever the guide suggests using &quot;a real recent example.&quot; Every workshop also
+            comes with a full presentation deck — detailed concepts, live examples, real-life use, ice
+            breakers and further reading — that you can present from the site or download as PowerPoint.
           </Callout>
         </div>
 

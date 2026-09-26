@@ -5,6 +5,7 @@ import { PageHeader } from "@/components/ui/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { LinkCard } from "@/components/ui/Card";
 import { workshopCategories, getWorkshopCategory, getWorkshopsByCategory } from "@/lib/content/workshops";
+import { getDeck } from "@/lib/content/workshops/decks";
 
 type PageParams = Promise<{ category: string }>;
 
@@ -36,7 +37,7 @@ export default async function WorkshopCategoryPage({ params }: { params: PagePar
               key={w.slug}
               href={`/workshops/${category}/${w.slug}`}
               title={w.title}
-              description={`${w.objective} (${w.duration})`}
+              description={`${w.objective} (${w.duration})${getDeck(w.slug) ? ` · Presentation deck included (${getDeck(w.slug)!.slides.length} slides)` : ""}`}
             />
           ))}
         </div>
