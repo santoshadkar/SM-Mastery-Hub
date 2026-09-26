@@ -36,8 +36,11 @@ export function DeckViewer({ deck }: { deck: Deck }) {
   useEffect(() => {
     const el = stageRef.current;
     if (!el) return;
-    // ResizeObserver reports the initial size as soon as observation starts.
-    const ro = new ResizeObserver(() => setBox({ w: el.clientWidth, h: el.clientHeight }));
+    const measure = () => setBox({ w: el.clientWidth, h: el.clientHeight });
+    // Measure immediately: ResizeObserver only fires at a rendering opportunity, which a
+    // background tab may not get for a while, leaving the slide hidden.
+    measure();
+    const ro = new ResizeObserver(measure);
     ro.observe(el);
     return () => ro.disconnect();
   }, [isFs]);
