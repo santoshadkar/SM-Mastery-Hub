@@ -85,7 +85,7 @@ export function AssessmentApp() {
         <h2 className="text-xl font-bold text-slate-900">Before you start</h2>
         <p className="mt-3 text-slate-600">
           This is 35 statements across 7 dimensions of the Scrum Master / Agile Coach role. For
-          each, rate how often it's true for you right now, from &quot;Rarely / Never&quot; to
+          each, rate how often it&apos;s true for you right now, from &quot;Rarely / Never&quot; to
           &quot;Consistently.&quot; There are no right answers — this is for your own growth
           planning. Nothing is sent anywhere or saved; if you refresh the page, your answers are
           gone.
@@ -149,7 +149,7 @@ export function AssessmentApp() {
           <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
             <h3 className="text-lg font-bold text-slate-900">Where to focus next</h3>
             <p className="mt-2 text-sm text-slate-600">
-              Based on your lowest-scoring dimensions, here's where growth would move the needle
+              Based on your lowest-scoring dimensions, here&apos;s where growth would move the needle
               most — a few concrete things you can actually do, not just what to read.
             </p>
             <div className="mt-6 space-y-5">
