@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { navItems } from "@/lib/nav";
+import { Logo } from "./Logo";
 
 export function NavBar() {
   const pathname = usePathname();
@@ -19,9 +20,7 @@ export function NavBar() {
         className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8"
       >
         <Link href="/" className="flex items-center gap-2 whitespace-nowrap text-lg font-bold text-slate-900">
-          <span className="flex h-8 w-8 items-center justify-center rounded-md bg-brand-600 text-sm font-bold text-white">
-            SM
-          </span>
+          <Logo className="h-8 w-8" />
           ScrumMaster Hub
         </Link>
 
